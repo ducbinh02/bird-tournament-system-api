@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://206.189.44.15:1433;database=TestDB;integratedSecurity=false;encrypt=false;trustServerCertificate=true;
+    username: sa
+    password: <YourStrong@Passw0rd>
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+#        show_sql: true
+#        format_sql: true
+        use_sql_comments: true
+
+logging:
+  level:
+    org.springframework: INFO
+    com.swp.doannc: INFO
+
+jwt:
+  secretKey: mySuperSecretKey
+  issuer: doannc2212@gmail.com
+  expirationMinute: 10
+
+swagger:
+  contact-name: SWP Dev
+  contact-mail: doannc2212@gmail.com
+  contact-url: https://github.com/doannc2212
+  app-name: Bird Tournament System API
+  app-description: "None"
+  app-version: 1.0.0
+  app-license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  app-license: Apache 2.0
